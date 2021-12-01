@@ -6,7 +6,8 @@
  * @second: second node
  * Return: pointer to ancestor
  */
-binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tree_t *second)
+binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
+		const binary_tree_t *second)
 {
 	binary_tree_t *next = NULL, *p_fir, *p_sec, *anc = NULL;
 
@@ -14,13 +15,13 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tr
 		return (NULL);
 	if (first == second)
 		return ((void *)first);
-	while(1)
+	while (1)
 	{
 		p_fir = (void *)first;
 		p_sec = (void *)second;
-		while(p_fir->parent != next)
+		while (p_fir->parent != next)
 			p_fir = p_fir->parent;
-		while(p_sec->parent != next)
+		while (p_sec->parent != next)
 			p_sec = p_sec->parent;
 		if (p_sec != p_fir)
 			break;
